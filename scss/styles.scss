@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Radio+Canada:wght@300&display=swap');
+
+// Variables
+$primary: hsl(232, 25%, 18%);
+$secondary: hsl(232, 26%, 16%);
+$red: hsl(356, 100%, 65%);
+$body: hsl(251, 22%, 62%);
+$white: #fff;
+
+$poppins: 'Poppins';
+$radio: 'Radio Canada';
+
+h1 {
+    font-family: $poppins;
+    font-size: 36px;
+    font-weight: 700;
+    color: $white;
+
+    @media (min-width: 50em) {
+      font-size: 72px;
+      font-weight: 700;
+      height: auto;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+}
+
+h2 {
+    color: $white;
+    font-family: $poppins;
+
+    @media (min-width: 50em) {
+      font-size: 54px;
+      font-weight: 700;
+      height: auto;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+}
+
+p {
+    //font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: $white;
+    // font-weight: 400;
+    // line-height: 1.5;
+}
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+      @media (max-width: 600px) {
+        @content;
+      }
+    }
+    @if $breakpoint == tab-port {
+      @media (max-width: 840px) {
+        @content;
+      }
+    }
+    @if $breakpoint == tab-land {
+      @media (max-width: 1040px) {
+        @content;
+      }
+    }
+    @if $breakpoint == big-desktop {
+      @media (min-width: 1500px) {
+        @content;
+      }
+    }
+  }
+
+  body {
+      background-color: $primary;
+      display: grid;
+      position: relative;
+  }
+
+  .btn {
+    padding: .5rem 1rem;
+    background: transparent;
+    border: 2px solid $white;
+  }
+
+  nav {
+      background-color: $primary;
+      position: relative;
+      padding: 2rem 0;
+    .logo-left {
+        font-family: $poppins;
+        font-size: 20px;
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+        span {
+            color: #ab66d2;
+        }
+    }
+    .nav-links {
+        margin-bottom: 0;
+        li {
+            display: inline-block;
+            list-style: none;
+            padding: 0 20px;
+            a {
+                font-family: $poppins;
+                font-size: 24px;
+                font-weight: 500;
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    @include respond(big-desktop) {
+      .nav-links {
+        li {
+          a {
+            font-family: $poppins;
+            font-weight: 500;
+            font-size: 24px;
+            color: $white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+}
+
+  .mainstage {
+      background-color: $primary;
+      .info {
+        text-align: start;
+        z-index: 1;
+
+        .subheadline {
+          font-family: $radio;
+          font-weight: 600;
+          font-size: 20px;
+          color: $body;
+          position: relative;
+
+          &:after {
+            content:'';
+            position: absolute;
+            background: linear-gradient(90deg, #7a63d2, #b266d2);
+            border-radius: 32px;
+            flex: none;
+            height: 5px;
+            margin: 0px 0px 0px 15px;
+            width: 40px;
+            max-width: calc(100% - 15px);
+            bottom: 37%;
+          }
+  
+          @media (min-width: 50em) {
+            font-family: $radio;
+          font-weight: 600;
+          font-size: 28px;
+          color: $body
+          }
+        }
+      }
+      .image {
+        img {
+          max-width: 100%;
+          @media (max-width: 50em) {
+            max-width: 40%;
+          }
+        }
+      }
+      .social-right{ 
+        li {
+          list-style: none;
+          margin: 2rem 0;
+          svg {
+            color: $white;
+            stroke-width: 1px;
+          }
+          &:hover {
+            svg {
+              color: $red;
+            }
+          }
+        }
+      }
+  }
+
+  #about {
+      background-color: $secondary;
+  }
+  .grid-span-2 {
+    // grid-column: span 2;
+  }
+  #work {
+    background-color: $primary;
+    .section-title {
+        
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-block: 2rem;
+
+      .work-item {
+        color: $white;
+        background-color: $secondary;
+        padding: 2rem;
+        border-radius: 0.2rem;
+        &:first-child {
+          background-image: url(/src/images/plug.png);
+          background-size: cover;
+          background-position: top;
+        }
+        &:nth-child(2) {
+          background-image: url(/src/images/perry.png);
+          background-size: cover;
+          background-position: top;
+        }
+        &:nth-child(3) {
+          background-image: url(/src/images/eecs.png);
+          background-size: cover;
+          background-position: top;
+        }
+        &:nth-child(4) {
+          background-image: url(/src/images/alexant.png);
+          background-size: cover;
+          background-position: top;
+        }
+        &:nth-child(5) {
+          background-image: url(/src/images/uchealth.png);
+          background-size: cover;
+          background-position: top;
+        }
+      }
+    }
+
+  }
+
+  #contact {
+      background-color: $primary;
+      text-align: center;
+  }
+
+  .footer {
+      background-color: $primary;
+      text-align: center;
+      .logo {
+        font-family: $poppins;
+        font-size: 20px;
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+        span {
+          color: #ab66d2;
+      }
+      }
+  }
+  .sub-footer {
+    background-color: $secondary;
+    text-align: center;
+    p {
+      margin-bottom: 0;
+    }
+  }

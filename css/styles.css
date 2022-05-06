@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Radio+Canada:wght@300&display=swap");
+h1 {
+  font-family: "Poppins";
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+}
+@media (min-width: 50em) {
+  h1 {
+    font-size: 72px;
+    font-weight: 700;
+    height: auto;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+}
+
+h2 {
+  color: #fff;
+  font-family: "Poppins";
+}
+@media (min-width: 50em) {
+  h2 {
+    font-size: 54px;
+    font-weight: 700;
+    height: auto;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+}
+
+p {
+  font-size: 16px;
+  color: #fff;
+}
+
+body {
+  background-color: hsl(232deg, 25%, 18%);
+  display: grid;
+  position: relative;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+nav {
+  background-color: hsl(232deg, 25%, 18%);
+  position: relative;
+  padding: 2rem 0;
+}
+nav .logo-left {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+}
+nav .logo-left span {
+  color: #ab66d2;
+}
+nav .nav-links {
+  margin-bottom: 0;
+}
+nav .nav-links li {
+  display: inline-block;
+  list-style: none;
+  padding: 0 20px;
+}
+nav .nav-links li a {
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+}
+@media (min-width: 1500px) {
+  nav .nav-links li a {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.mainstage {
+  background-color: hsl(232deg, 25%, 18%);
+}
+.mainstage .info {
+  text-align: start;
+  z-index: 1;
+}
+.mainstage .info .subheadline {
+  font-family: "Radio Canada";
+  font-weight: 600;
+  font-size: 20px;
+  color: hsl(251deg, 22%, 62%);
+  position: relative;
+}
+.mainstage .info .subheadline:after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, #7a63d2, #b266d2);
+  border-radius: 32px;
+  flex: none;
+  height: 5px;
+  margin: 0px 0px 0px 15px;
+  width: 40px;
+  max-width: calc(100% - 15px);
+  bottom: 37%;
+}
+@media (min-width: 50em) {
+  .mainstage .info .subheadline {
+    font-family: "Radio Canada";
+    font-weight: 600;
+    font-size: 28px;
+    color: hsl(251deg, 22%, 62%);
+  }
+}
+.mainstage .image img {
+  max-width: 100%;
+}
+@media (max-width: 50em) {
+  .mainstage .image img {
+    max-width: 40%;
+  }
+}
+.mainstage .social-right li {
+  list-style: none;
+  margin: 2rem 0;
+}
+.mainstage .social-right li svg {
+  color: #fff;
+  stroke-width: 1px;
+}
+.mainstage .social-right li:hover svg {
+  color: hsl(356deg, 100%, 65%);
+}
+
+#about {
+  background-color: hsl(232deg, 26%, 16%);
+}
+
+#work {
+  background-color: hsl(232deg, 25%, 18%);
+}
+#work .work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-block: 2rem;
+}
+#work .work-grid .work-item {
+  color: #fff;
+  background-color: hsl(232deg, 26%, 16%);
+  padding: 2rem;
+  border-radius: 0.2rem;
+}
+#work .work-grid .work-item:first-child {
+  background-image: url(/src/images/plug.png);
+  background-size: cover;
+  background-position: top;
+}
+#work .work-grid .work-item:nth-child(2) {
+  background-image: url(/src/images/perry.png);
+  background-size: cover;
+  background-position: top;
+}
+#work .work-grid .work-item:nth-child(3) {
+  background-image: url(/src/images/eecs.png);
+  background-size: cover;
+  background-position: top;
+}
+#work .work-grid .work-item:nth-child(4) {
+  background-image: url(/src/images/alexant.png);
+  background-size: cover;
+  background-position: top;
+}
+#work .work-grid .work-item:nth-child(5) {
+  background-image: url(/src/images/uchealth.png);
+  background-size: cover;
+  background-position: top;
+}
+
+#contact {
+  background-color: hsl(232deg, 25%, 18%);
+  text-align: center;
+}
+
+.footer {
+  background-color: hsl(232deg, 25%, 18%);
+  text-align: center;
+}
+.footer .logo {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+}
+.footer .logo span {
+  color: #ab66d2;
+}
+
+.sub-footer {
+  background-color: hsl(232deg, 26%, 16%);
+  text-align: center;
+}
+.sub-footer p {
+  margin-bottom: 0;
+}
