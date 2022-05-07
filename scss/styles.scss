@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Radio+Canada:wght@300&display=swap');
 
 // Variables
-$primary: hsl(232, 25%, 18%);
-$secondary: hsl(232, 26%, 16%);
+$primary: hsl(251, 18%, 12%);
+$secondary: hsl(249, 30%, 18%);
+$purple: hsl(250, 41%, 23%);
 $red: hsl(356, 100%, 65%);
+$blue: hsl(198, 46%, 57%);
 $body: hsl(251, 22%, 62%);
+$mint: hsl(185, 71%, 36%);
+$light-purple: hsl(274, 53%, 59%);
 $white: #fff;
 
 $poppins: 'Poppins';
@@ -75,11 +79,21 @@ p {
       display: grid;
       position: relative;
   }
+  .light-purple {
+    color: $light-purple !important;
+  }
 
   .btn {
     padding: .5rem 1rem;
+    background: $primary;
+    border-radius: 20px;
+    color: $white;
+    font-family: $radio;
+  }
+
+  .btn-tertiary {
     background: transparent;
-    border: 2px solid $white;
+    border-bottom: 2px solid $secondary;
   }
 
   nav {
@@ -129,6 +143,8 @@ p {
 
   .mainstage {
       background-color: $primary;
+      position: relative;
+      z-index: 1;
       .info {
         text-align: start;
         z-index: 1;
@@ -176,6 +192,9 @@ p {
           svg {
             color: $white;
             stroke-width: 1px;
+            width: 25px;
+            height: 25px;
+
           }
           &:hover {
             svg {
@@ -188,15 +207,17 @@ p {
 
   #about {
       background-color: $secondary;
+      position: relative;
+      z-index: 1;
   }
+
   .grid-span-2 {
-    // grid-column: span 2;
+    grid-column: span 2;
   }
+
   #work {
     background-color: $primary;
-    .section-title {
-        
-    }
+    position: relative;
     .work-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -205,37 +226,76 @@ p {
 
       .work-item {
         color: $white;
-        background-color: $secondary;
-        padding: 2rem;
-        border-radius: 0.2rem;
-        &:first-child {
-          background-image: url(/src/images/plug.png);
-          background-size: cover;
-          background-position: top;
-        }
-        &:nth-child(2) {
-          background-image: url(/src/images/perry.png);
-          background-size: cover;
-          background-position: top;
-        }
-        &:nth-child(3) {
-          background-image: url(/src/images/eecs.png);
-          background-size: cover;
-          background-position: top;
-        }
-        &:nth-child(4) {
-          background-image: url(/src/images/alexant.png);
-          background-size: cover;
-          background-position: top;
-        }
-        &:nth-child(5) {
-          background-image: url(/src/images/uchealth.png);
-          background-size: cover;
-          background-position: top;
-        }
-      }
-    }
+        background-color: $purple;
+        border-radius: .8rem;
+        .inner-card {
+          
+          h3 {
+            font-family: $poppins;
+          }
+          .tag {
+            display: inline-flex;
+            display: inline-flex;
+            align-items: center;
+            padding: .2rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+          }
+            .circle {
+              background: $blue;
+              box-shadow: #7a63d2;
+              border-radius: 50%;
+              flex: none;
+              height: 12px;
+              width: 12px;
+              max-width: 100%;
 
+              &.light-purple {
+                background: $light-purple;
+              }
+            }
+            h3 {
+              font-family: $poppins;
+              font-size: 32px;
+              font-weight: 700;
+              height: auto;
+              line-height: 1;
+            }
+            p {
+              margin-left: 10px;
+              color: $blue;
+              font-family: $poppins;
+              font-weight: 700;
+              font-size: 12px;
+              margin-bottom: 0;
+            }
+            .description {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 1.5;
+              color: $body;
+            }
+          }
+        }
+        
+        
+      }
+    &:before {
+      content: url(/src/images/blur.png);
+      bottom: auto;
+      flex: none;
+      height: 1000px;
+      left: -500px;
+      margin: 0 0 0 0;
+      position: absolute;
+      right: auto;
+      top: -570px;
+      transition-duration: 1200ms;
+      width: 1000px;
+      z-index: 0;
+      max-width: 100%;
+    }
   }
 
   #contact {
@@ -254,7 +314,10 @@ p {
         text-transform: uppercase;
         span {
           color: #ab66d2;
+        }
       }
+      .social {
+        margin-top: 1rem;
       }
   }
   .sub-footer {

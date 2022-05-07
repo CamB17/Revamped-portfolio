@@ -35,19 +35,30 @@ p {
 }
 
 body {
-  background-color: hsl(232deg, 25%, 18%);
+  background-color: hsl(251deg, 18%, 12%);
   display: grid;
   position: relative;
 }
 
+.light-purple {
+  color: hsl(274deg, 53%, 59%) !important;
+}
+
 .btn {
   padding: 0.5rem 1rem;
+  background: hsl(251deg, 18%, 12%);
+  border-radius: 20px;
+  color: #fff;
+  font-family: "Radio Canada";
+}
+
+.btn-tertiary {
   background: transparent;
-  border: 2px solid #fff;
+  border-bottom: 2px solid hsl(249deg, 30%, 18%);
 }
 
 nav {
-  background-color: hsl(232deg, 25%, 18%);
+  background-color: hsl(251deg, 18%, 12%);
   position: relative;
   padding: 2rem 0;
 }
@@ -87,7 +98,9 @@ nav .nav-links li a {
 }
 
 .mainstage {
-  background-color: hsl(232deg, 25%, 18%);
+  background-color: hsl(251deg, 18%, 12%);
+  position: relative;
+  z-index: 1;
 }
 .mainstage .info {
   text-align: start;
@@ -135,17 +148,26 @@ nav .nav-links li a {
 .mainstage .social-right li svg {
   color: #fff;
   stroke-width: 1px;
+  width: 25px;
+  height: 25px;
 }
 .mainstage .social-right li:hover svg {
   color: hsl(356deg, 100%, 65%);
 }
 
 #about {
-  background-color: hsl(232deg, 26%, 16%);
+  background-color: hsl(249deg, 30%, 18%);
+  position: relative;
+  z-index: 1;
+}
+
+.grid-span-2 {
+  grid-column: span 2;
 }
 
 #work {
-  background-color: hsl(232deg, 25%, 18%);
+  background-color: hsl(251deg, 18%, 12%);
+  position: relative;
 }
 #work .work-grid {
   display: grid;
@@ -155,43 +177,77 @@ nav .nav-links li a {
 }
 #work .work-grid .work-item {
   color: #fff;
-  background-color: hsl(232deg, 26%, 16%);
-  padding: 2rem;
-  border-radius: 0.2rem;
+  background-color: hsl(250deg, 41%, 23%);
+  border-radius: 0.8rem;
 }
-#work .work-grid .work-item:first-child {
-  background-image: url(/src/images/plug.png);
-  background-size: cover;
-  background-position: top;
+#work .work-grid .work-item .inner-card h3 {
+  font-family: "Poppins";
 }
-#work .work-grid .work-item:nth-child(2) {
-  background-image: url(/src/images/perry.png);
-  background-size: cover;
-  background-position: top;
+#work .work-grid .work-item .inner-card .tag {
+  display: inline-flex;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  margin-bottom: 1rem;
 }
-#work .work-grid .work-item:nth-child(3) {
-  background-image: url(/src/images/eecs.png);
-  background-size: cover;
-  background-position: top;
+#work .work-grid .work-item .inner-card .circle {
+  background: hsl(198deg, 46%, 57%);
+  box-shadow: #7a63d2;
+  border-radius: 50%;
+  flex: none;
+  height: 12px;
+  width: 12px;
+  max-width: 100%;
 }
-#work .work-grid .work-item:nth-child(4) {
-  background-image: url(/src/images/alexant.png);
-  background-size: cover;
-  background-position: top;
+#work .work-grid .work-item .inner-card .circle.light-purple {
+  background: hsl(274deg, 53%, 59%);
 }
-#work .work-grid .work-item:nth-child(5) {
-  background-image: url(/src/images/uchealth.png);
-  background-size: cover;
-  background-position: top;
+#work .work-grid .work-item .inner-card h3 {
+  font-family: "Poppins";
+  font-size: 32px;
+  font-weight: 700;
+  height: auto;
+  line-height: 1;
+}
+#work .work-grid .work-item .inner-card p {
+  margin-left: 10px;
+  color: hsl(198deg, 46%, 57%);
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+#work .work-grid .work-item .inner-card .description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: hsl(251deg, 22%, 62%);
+}
+#work:before {
+  content: url(/src/images/blur.png);
+  bottom: auto;
+  flex: none;
+  height: 1000px;
+  left: -500px;
+  margin: 0 0 0 0;
+  position: absolute;
+  right: auto;
+  top: -570px;
+  transition-duration: 1200ms;
+  width: 1000px;
+  z-index: 0;
+  max-width: 100%;
 }
 
 #contact {
-  background-color: hsl(232deg, 25%, 18%);
+  background-color: hsl(251deg, 18%, 12%);
   text-align: center;
 }
 
 .footer {
-  background-color: hsl(232deg, 25%, 18%);
+  background-color: hsl(251deg, 18%, 12%);
   text-align: center;
 }
 .footer .logo {
@@ -204,9 +260,12 @@ nav .nav-links li a {
 .footer .logo span {
   color: #ab66d2;
 }
+.footer .social {
+  margin-top: 1rem;
+}
 
 .sub-footer {
-  background-color: hsl(232deg, 26%, 16%);
+  background-color: hsl(249deg, 30%, 18%);
   text-align: center;
 }
 .sub-footer p {
