@@ -83,12 +83,30 @@ p {
     color: $light-purple !important;
   }
 
+  svg {
+    &.large-icon {
+      color: $white ;
+      color: l;
+      stroke-width: 1.2px;
+      width: 45px;
+      height: 45px;
+    }
+  }
+
   .btn {
-    padding: .5rem 1rem;
-    background: $primary;
-    border-radius: 20px;
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    border: 2px solid $secondary;
+    background: transparent;
+    border-radius: 0.3rem;
     color: $white;
     font-family: $radio;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $secondary;
+      color: $white;
+    }
   }
 
   .btn-tertiary {
@@ -115,29 +133,36 @@ p {
         li {
             display: inline-block;
             list-style: none;
-            padding: 0 20px;
+            padding: 0 10px;
             a {
+                font-family: $poppins;
+                font-size: 18px;
+                font-weight: 500;
+                color: $white;
+                text-decoration: none;
+
+                span {
+                  color: $white;
+                }
+                &:hover {
+                  border-bottom: 2px solid $white;
+                  span {
+                    color: #b266d2;
+                  }
+                }
+            }
+
+            @media (min-width: 50em) {
+              padding: 0 20px;
+              a {
                 font-family: $poppins;
                 font-size: 24px;
                 font-weight: 500;
                 color: $white;
                 text-decoration: none;
+              }
             }
         }
-    }
-
-    @include respond(big-desktop) {
-      .nav-links {
-        li {
-          a {
-            font-family: $poppins;
-            font-weight: 500;
-            font-size: 24px;
-            color: $white;
-            text-decoration: none;
-          }
-        }
-      }
     }
 }
 
@@ -145,6 +170,7 @@ p {
       background-color: $primary;
       position: relative;
       z-index: 1;
+      padding-top: 2rem;
       .info {
         text-align: start;
         z-index: 1;
@@ -168,27 +194,17 @@ p {
             max-width: calc(100% - 15px);
             bottom: 37%;
           }
-  
-          @media (min-width: 50em) {
-            font-family: $radio;
-          font-weight: 600;
-          font-size: 28px;
-          color: $body
-          }
         }
       }
       .image {
         img {
           max-width: 100%;
-          @media (max-width: 50em) {
-            max-width: 40%;
-          }
         }
       }
       .social-right{ 
         li {
           list-style: none;
-          margin: 2rem 0;
+          margin: 1rem 0;
           svg {
             color: $white;
             stroke-width: 1px;
@@ -203,33 +219,102 @@ p {
           }
         }
       }
+      @media (min-width: 50em) {
+        padding-top: 0;
+        .info {
+          .subheadline {
+            font-family: $radio;
+            font-weight: 600;
+            font-size: 28px;
+            color: $body;
+          }
+        }
+        .social-right {
+          li {
+            margin: 2rem 0;
+          }
+        }
+      }
   }
 
   #about {
       background-color: $secondary;
       position: relative;
       z-index: 1;
+      color: $body;
+      p {
+        font-size: 18px;
+        color: $body;
+      }
+      .personal-snippet {
+        p {
+          width: 100%;
+          @media (min-width: 50rem) {
+            width: 80%;
+          }
+        }
+      }
+      .hold-me {
+        h3 {
+          color: $white;
+          font-weight: 600;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            background: linear-gradient(90deg, #7a63d2, #b266d2);
+            border-radius: 32px;
+            flex: none;
+            height: 1px;
+            margin: 0px 0px 0px 15px;
+            width: 50px;
+            max-width: calc(100% - 15px);
+            bottom: 45%;
+          }
+        }
+      }
   }
 
   .grid-span-2 {
-    grid-column: span 2;
+    grid-column: span 1;
+
+    @media (min-width: 50em) {
+      grid-column: span 2;
+    }
   }
 
   #work {
     background-color: $primary;
     position: relative;
+    h2 {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(90deg, #7a63d2, #b266d2);
+        border-radius: 32px;
+        flex: none;
+        height: 1px;
+        margin: 0px 0px 0px 15px;
+        width: 50px;
+        max-width: calc(100% - 15px);
+        bottom: 45%;
+      }
+    }
     .work-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: repeat(1, 1fr);
+      gap: .5rem;
       padding-block: 2rem;
 
       .work-item {
         color: $white;
-        background-color: $purple;
-        border-radius: .8rem;
+        background-color: $secondary;
+        border-radius: .3rem;
+        .card-wrapper {
+          padding: 1.5rem 1.5rem 0 1.5rem;
+        }
         .inner-card {
-          
           h3 {
             font-family: $poppins;
           }
@@ -250,6 +335,7 @@ p {
               height: 12px;
               width: 12px;
               max-width: 100%;
+              margin-right: 10px;
 
               &.light-purple {
                 background: $light-purple;
@@ -263,7 +349,6 @@ p {
               line-height: 1;
             }
             p {
-              margin-left: 10px;
               color: $blue;
               font-family: $poppins;
               font-weight: 700;
@@ -277,24 +362,52 @@ p {
               color: $body;
             }
           }
+
+          svg {
+            &.feather-external-link {
+              color: #b266d2;
+            }
+          }
+
+          &:hover {
+            cursor: pointer;
+            background-color: #7a63d2;
+            .inner-card {
+              .tag {
+                background-color: #fff;
+              }
+              .description {
+                color: $white;
+              }
+            }
+            svg {
+              color: $white;
+            }
+          }
         }
-        
-        
       }
-    &:before {
-      content: url(/src/images/blur.png);
-      bottom: auto;
-      flex: none;
-      height: 1000px;
-      left: -500px;
-      margin: 0 0 0 0;
-      position: absolute;
-      right: auto;
-      top: -570px;
-      transition-duration: 1200ms;
-      width: 1000px;
-      z-index: 0;
-      max-width: 100%;
+
+     // Media Queries
+     @media (min-width: 50em) {
+      h2 {
+        position: relative;
+        &:after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(90deg, #7a63d2, #b266d2);
+        border-radius: 32px;
+        flex: none;
+        height: 1px;
+        margin: 0px 0px 0px 25px;
+        width: 200px;
+        max-width: calc(100% - 15px);
+        bottom: 45%;
+        }
+      }
+      .work-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
     }
   }
 
@@ -304,21 +417,35 @@ p {
   }
 
   .footer {
-      background-color: $primary;
-      text-align: center;
-      .logo {
-        font-family: $poppins;
-        font-size: 20px;
-        font-weight: 700;
-        color: $white;
-        text-transform: uppercase;
-        span {
-          color: #ab66d2;
+    border-top: 2px solid $secondary;
+    background-color: $primary;
+    text-align: center;
+    .logo {
+      font-family: $poppins;
+      font-size: 20px;
+      font-weight: 700;
+      color: $white;
+      text-transform: uppercase;
+      span {
+        color: #ab66d2;
+      }
+    }
+    .social {
+      margin-top: 1rem;
+      a {
+        svg {
+          color: $white;
+          stroke-width: 1px;
+          width: 25px;
+          height: 25px;
+        }
+        &:hover {
+          svg {
+            color: $red;
+          }
         }
       }
-      .social {
-        margin-top: 1rem;
-      }
+    }
   }
   .sub-footer {
     background-color: $secondary;

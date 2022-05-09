@@ -44,12 +44,27 @@ body {
   color: hsl(274deg, 53%, 59%) !important;
 }
 
+svg.large-icon {
+  color: #fff;
+  color: l;
+  stroke-width: 1.2px;
+  width: 45px;
+  height: 45px;
+}
+
 .btn {
-  padding: 0.5rem 1rem;
-  background: hsl(251deg, 18%, 12%);
-  border-radius: 20px;
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border: 2px solid hsl(249deg, 30%, 18%);
+  background: transparent;
+  border-radius: 0.3rem;
   color: #fff;
   font-family: "Radio Canada";
+  font-weight: 600;
+}
+.btn:hover {
+  background-color: hsl(249deg, 30%, 18%);
+  color: #fff;
 }
 
 .btn-tertiary {
@@ -78,20 +93,32 @@ nav .nav-links {
 nav .nav-links li {
   display: inline-block;
   list-style: none;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 nav .nav-links li a {
   font-family: "Poppins";
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
   color: #fff;
   text-decoration: none;
 }
-@media (min-width: 1500px) {
+nav .nav-links li a span {
+  color: #fff;
+}
+nav .nav-links li a:hover {
+  border-bottom: 2px solid #fff;
+}
+nav .nav-links li a:hover span {
+  color: #b266d2;
+}
+@media (min-width: 50em) {
+  nav .nav-links li {
+    padding: 0 20px;
+  }
   nav .nav-links li a {
     font-family: "Poppins";
-    font-weight: 500;
     font-size: 24px;
+    font-weight: 500;
     color: #fff;
     text-decoration: none;
   }
@@ -101,6 +128,7 @@ nav .nav-links li a {
   background-color: hsl(251deg, 18%, 12%);
   position: relative;
   z-index: 1;
+  padding-top: 2rem;
 }
 .mainstage .info {
   text-align: start;
@@ -125,25 +153,12 @@ nav .nav-links li a {
   max-width: calc(100% - 15px);
   bottom: 37%;
 }
-@media (min-width: 50em) {
-  .mainstage .info .subheadline {
-    font-family: "Radio Canada";
-    font-weight: 600;
-    font-size: 28px;
-    color: hsl(251deg, 22%, 62%);
-  }
-}
 .mainstage .image img {
   max-width: 100%;
 }
-@media (max-width: 50em) {
-  .mainstage .image img {
-    max-width: 40%;
-  }
-}
 .mainstage .social-right li {
   list-style: none;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 .mainstage .social-right li svg {
   color: #fff;
@@ -154,31 +169,98 @@ nav .nav-links li a {
 .mainstage .social-right li:hover svg {
   color: hsl(356deg, 100%, 65%);
 }
+@media (min-width: 50em) {
+  .mainstage {
+    padding-top: 0;
+  }
+  .mainstage .info .subheadline {
+    font-family: "Radio Canada";
+    font-weight: 600;
+    font-size: 28px;
+    color: hsl(251deg, 22%, 62%);
+  }
+  .mainstage .social-right li {
+    margin: 2rem 0;
+  }
+}
 
 #about {
   background-color: hsl(249deg, 30%, 18%);
   position: relative;
   z-index: 1;
+  color: hsl(251deg, 22%, 62%);
+}
+#about p {
+  font-size: 18px;
+  color: hsl(251deg, 22%, 62%);
+}
+#about .personal-snippet p {
+  width: 100%;
+}
+@media (min-width: 50rem) {
+  #about .personal-snippet p {
+    width: 80%;
+  }
+}
+#about .hold-me h3 {
+  color: #fff;
+  font-weight: 600;
+  position: relative;
+}
+#about .hold-me h3:after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, #7a63d2, #b266d2);
+  border-radius: 32px;
+  flex: none;
+  height: 1px;
+  margin: 0px 0px 0px 15px;
+  width: 50px;
+  max-width: calc(100% - 15px);
+  bottom: 45%;
 }
 
 .grid-span-2 {
-  grid-column: span 2;
+  grid-column: span 1;
+}
+@media (min-width: 50em) {
+  .grid-span-2 {
+    grid-column: span 2;
+  }
 }
 
 #work {
   background-color: hsl(251deg, 18%, 12%);
   position: relative;
 }
+#work h2 {
+  position: relative;
+}
+#work h2:after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, #7a63d2, #b266d2);
+  border-radius: 32px;
+  flex: none;
+  height: 1px;
+  margin: 0px 0px 0px 15px;
+  width: 50px;
+  max-width: calc(100% - 15px);
+  bottom: 45%;
+}
 #work .work-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.5rem;
   padding-block: 2rem;
 }
 #work .work-grid .work-item {
   color: #fff;
-  background-color: hsl(250deg, 41%, 23%);
-  border-radius: 0.8rem;
+  background-color: hsl(249deg, 30%, 18%);
+  border-radius: 0.3rem;
+}
+#work .work-grid .work-item .card-wrapper {
+  padding: 1.5rem 1.5rem 0 1.5rem;
 }
 #work .work-grid .work-item .inner-card h3 {
   font-family: "Poppins";
@@ -200,6 +282,7 @@ nav .nav-links li a {
   height: 12px;
   width: 12px;
   max-width: 100%;
+  margin-right: 10px;
 }
 #work .work-grid .work-item .inner-card .circle.light-purple {
   background: hsl(274deg, 53%, 59%);
@@ -212,7 +295,6 @@ nav .nav-links li a {
   line-height: 1;
 }
 #work .work-grid .work-item .inner-card p {
-  margin-left: 10px;
   color: hsl(198deg, 46%, 57%);
   font-family: "Poppins";
   font-weight: 700;
@@ -225,20 +307,42 @@ nav .nav-links li a {
   line-height: 1.5;
   color: hsl(251deg, 22%, 62%);
 }
-#work:before {
-  content: url(/src/images/blur.png);
-  bottom: auto;
-  flex: none;
-  height: 1000px;
-  left: -500px;
-  margin: 0 0 0 0;
-  position: absolute;
-  right: auto;
-  top: -570px;
-  transition-duration: 1200ms;
-  width: 1000px;
-  z-index: 0;
-  max-width: 100%;
+#work .work-grid .work-item svg.feather-external-link {
+  color: #b266d2;
+}
+#work .work-grid .work-item:hover {
+  cursor: pointer;
+  background-color: #7a63d2;
+}
+#work .work-grid .work-item:hover .inner-card .tag {
+  background-color: #fff;
+}
+#work .work-grid .work-item:hover .inner-card .description {
+  color: #fff;
+}
+#work .work-grid .work-item:hover svg {
+  color: #fff;
+}
+@media (min-width: 50em) {
+  #work h2 {
+    position: relative;
+  }
+  #work h2:after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, #7a63d2, #b266d2);
+    border-radius: 32px;
+    flex: none;
+    height: 1px;
+    margin: 0px 0px 0px 25px;
+    width: 200px;
+    max-width: calc(100% - 15px);
+    bottom: 45%;
+  }
+  #work .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 #contact {
@@ -247,6 +351,7 @@ nav .nav-links li a {
 }
 
 .footer {
+  border-top: 2px solid hsl(249deg, 30%, 18%);
   background-color: hsl(251deg, 18%, 12%);
   text-align: center;
 }
@@ -262,6 +367,15 @@ nav .nav-links li a {
 }
 .footer .social {
   margin-top: 1rem;
+}
+.footer .social a svg {
+  color: #fff;
+  stroke-width: 1px;
+  width: 25px;
+  height: 25px;
+}
+.footer .social a:hover svg {
+  color: hsl(356deg, 100%, 65%);
 }
 
 .sub-footer {
