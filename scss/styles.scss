@@ -133,10 +133,10 @@ p {
         li {
             display: inline-block;
             list-style: none;
-            padding: 0 10px;
+            padding: 0 5px;
             a {
                 font-family: $poppins;
-                font-size: 18px;
+                font-size: 16px;
                 font-weight: 500;
                 color: $white;
                 text-decoration: none;
@@ -255,6 +255,7 @@ p {
         }
       }
       .hold-me {
+        margin-top: 30px;
         h3 {
           color: $white;
           font-weight: 600;
@@ -271,6 +272,10 @@ p {
             max-width: calc(100% - 15px);
             bottom: 45%;
           }
+        }
+
+        @media (min-width: 50rem) {
+          margin-top: 0;
         }
       }
   }
@@ -300,6 +305,15 @@ p {
         max-width: calc(100% - 15px);
         bottom: 45%;
       }
+    }
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+  
+        @media (min-width: 50rem) {
+          padding-right: var(--bs-gutter-x,.75rem);
+          padding-left: var(--bs-gutter-x,.75rem);
+        }
     }
     .work-grid {
       display: grid;
@@ -343,16 +357,20 @@ p {
             }
             h3 {
               font-family: $poppins;
-              font-size: 32px;
+              font-size: 26px;
               font-weight: 700;
               height: auto;
               line-height: 1;
+
+              @media (min-width: 50em) {
+                font-size: 32px;
+              }
             }
             p {
               color: $blue;
               font-family: $poppins;
               font-weight: 700;
-              font-size: 12px;
+              font-size: 10px;
               margin-bottom: 0;
             }
             .description {

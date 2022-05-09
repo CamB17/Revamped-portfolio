@@ -93,11 +93,11 @@ nav .nav-links {
 nav .nav-links li {
   display: inline-block;
   list-style: none;
-  padding: 0 10px;
+  padding: 0 5px;
 }
 nav .nav-links li a {
   font-family: "Poppins";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #fff;
   text-decoration: none;
@@ -202,6 +202,9 @@ nav .nav-links li a:hover span {
     width: 80%;
   }
 }
+#about .hold-me {
+  margin-top: 30px;
+}
 #about .hold-me h3 {
   color: #fff;
   font-weight: 600;
@@ -218,6 +221,11 @@ nav .nav-links li a:hover span {
   width: 50px;
   max-width: calc(100% - 15px);
   bottom: 45%;
+}
+@media (min-width: 50rem) {
+  #about .hold-me {
+    margin-top: 0;
+  }
 }
 
 .grid-span-2 {
@@ -247,6 +255,16 @@ nav .nav-links li a:hover span {
   width: 50px;
   max-width: calc(100% - 15px);
   bottom: 45%;
+}
+#work .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+@media (min-width: 50rem) {
+  #work .container {
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+  }
 }
 #work .work-grid {
   display: grid;
@@ -289,16 +307,21 @@ nav .nav-links li a:hover span {
 }
 #work .work-grid .work-item .inner-card h3 {
   font-family: "Poppins";
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   height: auto;
   line-height: 1;
+}
+@media (min-width: 50em) {
+  #work .work-grid .work-item .inner-card h3 {
+    font-size: 32px;
+  }
 }
 #work .work-grid .work-item .inner-card p {
   color: hsl(198deg, 46%, 57%);
   font-family: "Poppins";
   font-weight: 700;
-  font-size: 12px;
+  font-size: 10px;
   margin-bottom: 0;
 }
 #work .work-grid .work-item .inner-card .description {
